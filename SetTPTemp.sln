@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.0.0.7070
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SetTPTemp", "SetTPTemp.csproj", "{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+		Debug|BPC = Debug|BPC
+		Release|BPC = Release|BPC
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Debug|x86.Build.0 = Debug|x86
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Debug|x86.ActiveCfg = Debug|x86
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Release|x86.Build.0 = Release|x86
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Release|x86.ActiveCfg = Release|x86
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Debug|BPC.Build.0 = Debug|BPC
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Debug|BPC.ActiveCfg = Debug|BPC
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Release|BPC.Build.0 = Release|BPC
+		{8275A6DB-FF70-40DE-887B-EA64E15DBDE4}.Release|BPC.ActiveCfg = Release|BPC
+	EndGlobalSection
+EndGlobal

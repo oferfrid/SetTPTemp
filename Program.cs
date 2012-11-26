@@ -14,35 +14,45 @@ namespace SetTPTemp
 {
 	class Program
 	{
-
-
 		static bool _continue;
 		static SerialPort SP ;
 
 		public static void Main(string[] args)
 		{
 			Thread readThread = new Thread(Read);
-			int Port ;
+			string portName;
 			int Temperature;
 
-			if (args.Length<2)
+			if (args.Length<1)
 			{
-				Console.WriteLine("Usege: SetTPTemp.exe <Port> <Temperature>\n writen by Ofer Fridman ofer.fridman@mail.huji.ac.il");
+				Console.WriteLine("Usege: SetTPTemp.exe <Port name> <Temperature>\nTo get all avalbale ports use: SetTPTemp.exe -p \nwriten by Ofer Fridman ofer.fridman@mail.huji.ac.il\nSource avalbe at https://github.com/oferfrid/SetTPTemp");
+			}
+			else if(args.Length<2)
+			{
+				// Get a list of serial port names.
+				string[] ports = SerialPort.GetPortNames();
+
+				Console.WriteLine("The following serial ports names were found:");
+
+				// Display each port name to the console.
+				foreach(string port in ports)
+				{
+					Console.WriteLine(port);
+				}
 			}
 			else
 			{
 				try
 				{
-					Port = System.Convert.ToInt32(args[0]);
+					portName = args[0];
 					Temperature = System.Convert.ToInt32(args[1]);
 				}
 				catch
 				{
-					Console.WriteLine("Parameters sould be numeric \n Usege: SetTPTemp.exe <Port> <Temperature>");
+					Console.WriteLine("Temperature arameter sould be numeric \n Usege: SetTPTemp.exe <Port name> <Temperature>");
 					return;
 				}
 				
-				string portName = "COM" + Port.ToString();
 				int baudRate = 9600;
 				Parity parity = Parity.None;
 				int dataBits =8;
@@ -72,6 +82,8 @@ namespace SetTPTemp
 				try
 				{
 					string message = SP.ReadExisting();
+					Console.Write(message);
+					message = string.Empty;
 				}
 				catch (TimeoutException) { }
 			}
